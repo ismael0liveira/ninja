@@ -1,0 +1,158 @@
+minuto, hora, dia, mês, dia da semana <comando>
+
+
+
+qtd=$(cat findomain.old.txt | wc -l);
+novo=$(cat findomainNovo.txt | wc -l);
+
+if [ $novo -ne $qtd ];then
+	echo "Novo subdomínio" >> log.txt; 
+else
+	echo "";
+fi
+	
+comparar dois arquivos com diff:
+
+http://www.bosontreinamentos.com.br/linux/como-comparar-arquivos-no-linux-com-cmp-comm-diff-e-sdiff/
+
+
+diff arquivoUm.txt arquivoDois.txt
+
+
+diff formminghackers.com.old.txt formminghackers.txt --color | grep ">" | sed 's/>//' | sed 's/ //'
+
+
+
+
+
+
+/// Um shell script cronjob que fica rodando findomain o tempo todo
+///Um shell script cronjob que fica o tempo inteiro comparando o arquivo old de findomain com o novo
+///Desse shell script que monitora os arquivos de findomain é guardado o resultado diferente dentro de um
+arquivo de texto
+
+//Um shell script cronjob que irá comparar este arquivo resultado old com o novo, se tiver alguma diferença,
+irá fazer algo. 
+
+
+
+diff formminghackers.com.old.txt formminghackers.txt --color | grep ">" | sed 's/>//' | sed 's/ //' >> resultado.txt
+
+
+
+
+
+qtd=$(cat resultadoold.txt | wc -l);
+novo=$(cat resultado.txt | wc -l);
+
+if [ $novo -ne $qtd ];then
+	for n in $(seq 1 20);do touch /home/ninja/Desktop/subdominio$n.txt;done
+else
+    echo "";
+fi
+
+
+
+
+//////Script cronjob que irá criar arquivos txt na página inicial avisando que tem novo subdomínio.
+
+///for n in $(seq 1 20);do touch /home/ninja/Desktop/subdominio$n.txt;done
+
+
+///for n in $(seq 1 20);do rm /home/ninja/Desktop/subdominio$n.txt;done
+
+
+
+
+
+
+
+**************************************
+
+
+
+
+* * * * * cd /home/ninja/bugbounty/tool/testes/;findomain --output -t formminghackers.com
+
+
+
+* * * * * diff /home/ninja/bugbounty/tool/testes/formminghackers.com.old.txt /home/ninja/bugbounty/tool/testes/formminghackers.txt --color | grep ">" | sed 's/>//' | sed 's/ //' >> /home/ninja/bugbounty/tool/testes/resultado.txt
+
+
+* * * * * qtd=$(cat /home/ninja/bugbounty/tool/testes/resultadoold.txt | wc -l); novo=$(cat /home/ninja/bugbounty/tool/testes/resultado.txt | wc -l); dominioUm="formminghackers.com"; if [ $novo -ne $qtd ];then for n in $(seq 1 20);do touch /home/ninja/Desktop/$dominioUm$n.txt;done; else echo "";fi 
+
+
+
+
+* * * * * qtd=$(cat /home/ninja/bugbounty/tool/testes/resultadoold.txt | wc -l); novo=$(cat /home/ninja/bugbounty/tool/testes/resultado.txt | wc -l); dominioUm="formminghackers.com"; if [ $novo -ne $qtd ];then for n in $(seq 1 20);do rm /home/ninja/Desktop/$dominioUm$n.txt;done; else echo "";fi
+
+
+
+
+
+Atualizando:
+
+
+
+* * * * * qtd=$(cat /home/ninja/bugbounty/tool/testes/resultadoold.txt | wc -l); novo=$(cat /home/ninja/bugbounty/tool/testes/resultado.txt | wc -l); dominioUm="formminghackers.com"; if [ $novo -ne $qtd ];then for n in $(seq 1 20);do touch /home/ninja/Desktop/$dominioUm$n.txt; echo "Veja o resultado no arquivo resultado.txt do diretório da Ninja: /caminho/monitoramento/dominio/resultado.txt"done; else echo "";fi
+
+
+
+
+
+
+
+* * * * * qtd=$(cat /home/ninja/bugbounty/tool/testes/resultadoold.txt | wc -l); novo=$(cat /home/ninja/bugbounty/tool/testes/resultado.txt | wc -l); dominioUm="formminghackers.com"; if [ $novo -ne $qtd ];then for n in $(seq 1 20);do touch /home/ninja/Desktop/$dominioUm$n.txt; echo "Veja o resultado no arquivo resultado.txt do diretório da Ninja: /caminho/monitoramento/dominio/resultado.txt" >> /home/ninja/Desktop/$dominioUm$n.txt;done; else echo "";fi
+
+
+
+
+
+
+
+OFICIAL******************
+
+Tem que lembrar de entrar na pasta de /bugbounty/monitoramento/dominio/ e criar o arquivo resultadoold.txt e também um findomain old do domínio.
+
+
+
+
+É importante criar um arquivo de escopo do domínio lá no monitoramento, nesse arquivo deixa anotado de onde é aquele domínio, de qual plataforma ele é, assim não perde de onde é.
+
+
+
+
+*/2 * * * * cd /home/ninja/bugbounty/tool/monitoramento/coino.com/;findomain --output -t coino.com; cat coino.com.old.txt | sort -d > old.txt; cat coino.com.txt | sort -d > coino.txt;
+
+* * * * * diff /home/ninja/bugbounty/tool/monitoramento/coino.com/old.txt /home/ninja/bugbounty/tool/monitoramento/coino.com/coino.txt -i | grep ">" | sed 's/>//' | sed 's/ //' >> /home/ninja/bugbounty/tool/monitoramento/coino.com/resultado.txt
+
+* * * * * qtd=$(cat /home/ninja/bugbounty/tool/monitoramento/coino.com/resultadoold.txt | wc -l); novo=$(cat /home/ninja/bugbounty/tool/monitoramento/coino.com/resultado.txt | wc -l); dominioUm="coino.com"; if [ $novo -ne $qtd ];then for n in $(seq 1 20);do touch /home/ninja/Desktop/$dominioUm$n.txt; echo "Veja o resultado no arquivo resultado.txt do diretório da Ninja: /caminho/monitoramento/dominio/resultado.txt" >> /home/ninja/Desktop/$dominioUm$n.txt;done; else echo "";fi
+
+
+
+
+
+
+
+
+outro exemplo oficial:
+
+
+
+
+
+
+#----------------           ktun.edu.tr             --------------------------
+
+
+
+*/2 * * * * cd /home/ninja/bugbounty/tool/monitoramento/ktun.edu.tr/;findomain --output -t ktun.edu.tr; cat ktun.edu.tr.old.txt | sort -d > old.txt; cat ktun.edu.tr.txt | sort -d > novo.txt;
+
+* * * * * diff /home/ninja/bugbounty/tool/monitoramento/ktun.edu.tr/old.txt /home/ninja/bugbounty/tool/monitoramento/ktun.edu.tr/novo.txt -i | grep ">" | sed 's/>//' | sed 's/ //' >> /home/ninja/bugbounty/tool/monitoramento/ktun.edu.tr/resultado.txt
+
+* * * * * qtd=$(cat /home/ninja/bugbounty/tool/monitoramento/ktun.edu.tr/resultadoold.txt | wc -l); novo=$(cat /home/ninja/bugbounty/tool/monitoramento/ktun.edu.tr/resultado.txt | wc -l); dominioUm="ktun.edu.tr"; if [ $novo -ne $qtd ];then for n in $(seq 1 20);do touch /home/ninja/Desktop/$dominioUm$n.txt; echo "Veja o resultado no arquivo resultado.txt do diretório da Ninja: /caminho/monitoramento/dominio/resultado.txt" >> /home/ninja/Desktop/$dominioUm$n.txt;done; else echo "";fi
+
+
+
+
+
