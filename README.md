@@ -16,3 +16,7 @@ cd ninja<br>
 sudo su<br>
 chmod 777 install.sh<br>
 ./install.sh
+
+Para executar a ninja:
+
+./ninja.sh
