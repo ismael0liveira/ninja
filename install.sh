@@ -9,6 +9,8 @@ if [ $user != "root" ];then
 	exit;
 fi
 
+chmod 777 scanner/;
+
 if [ -e /usr/bin/zenity ];then
 	echo -e "\033[32;1mZENITY JÁ INSTALADO\033[m";
 else
