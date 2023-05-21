@@ -11,8 +11,8 @@ PARA INSTALAR A NINJA:
 
 Basta executar:
 
-git clone https://github.com/ismael0liveira/ninja
-cd ninja
-sudo su
-chmod 777 install.sh
+git clone https://github.com/ismael0liveira/ninja<br>
+cd ninja<br>
+sudo su<br>
+chmod 777 install.sh<br>
 ./install.sh
