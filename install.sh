@@ -187,7 +187,7 @@ cd ../;
 
 echo -e "\n\n\033[33;1mTOOL - VULMAP - ZHZYKER\033[m";
 
-git "clone https://github.com/zhzyker/vulmap.git";
+git clone "https://github.com/zhzyker/vulmap.git";
 mv vulmap/ tool_VULMAP;
 cd tool_VULMAP/;
 pip3 install -r requirements.txt;
