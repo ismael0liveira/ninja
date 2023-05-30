@@ -8,4 +8,4 @@
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 	13) -> OPEN REDIRECT			15) -->> CRLF INJECTION
-	14) -> CORS MISCONFIGURATION		16) -->> SCAN ARACHINI
+	14) -> CORS MISCONFIGURATION		16) -->> SCAN ARACHNI
