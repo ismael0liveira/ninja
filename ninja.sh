@@ -135,7 +135,7 @@ while [ $um == "1" ];do
                         terminator -e "./scan_CRLF.sh $dominio" &
                         banner;;
 		'16')
-			terminator -e "./scan_ARACHINI.sh" &
+			terminator -e "./scan_ARACHNI.sh" &
 			banner;;
 		*)
 			banner;;
