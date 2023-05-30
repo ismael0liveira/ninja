@@ -99,10 +99,12 @@ else
         case $resposta in
                 "1")
                         apt install python3 -y;
-                        apt install python3-pip -y;;
+                        apt install python3-pip -y;
+                        pip3 install pyfiglet;;
                 "2")
                         pacman -Sy python3;
-                        pacman -Sy python3-pip;;
+                        pacman -Sy python3-pip;
+                        pip3 install pyfiglet;;
                 *)
                         echo -e "\033[31;1mOpção Inválida!!\033[m";
                         exit;;
@@ -110,6 +112,25 @@ else
 
 fi
 
+
+
+
+if [ -e /usr/share/zaproxy/zap.sh ];then
+        echo -e "\033[32;1mZAPROXY JÁ INSTALADO...\033[m";
+else
+        echo -e "\n\n\033[32;1m Instalando ZAPROXY - Selecione 1 para [Kali Linux/Parrot/Debian] Selecione 2 para [Arch Linux]\033[m";
+
+       read -p "Selecione: [1/2]" resposta;
+         case $resposta in
+                "1")
+                        apt install zaproxy;;
+                "2")
+                        pacman -Sy zaproxy;;
+                *)
+                        echo -e "\033[31;1mOpção Inválida!!\033[m";
+                        exit;;
+                esac
+fi
 
 echo -e "\n\n\033[33;1mCURL \033[m";
 
@@ -132,12 +153,31 @@ else
 fi
 
 
+echo -e "\n\n\033[33;1mNGROK \033[m";
+
+if [ -e /usr/bin/ngrok ];then
+        echo -e "\033[32;1mNGROK JÁ INSTALADO...\033[m";
+else
+    wget "https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz";
+    tar xvzf ngrok-v3-stable-linux-amd64.tgz -C /usr/local/bin;
+fi
+
+echo -e "\n\n\033[33;1mGOWITNESS \033[m";
+
+if [ -e /usr/bin/gowitness ];then
+        echo -e "\033[32;1mGOWITNESS JÁ INSTALADO...\033[m";
+else
+		go install github.com/sensepost/gowitness@latest;
+		mv /root/go/bin/gowitness /usr/bin/
+fi
+
 echo -e "\n\n\033[33;1mFINDOMAIN \033[m";
 
 if [ -e /usr/bin/findomain ];then
         echo -e "\033[32;1mFINDOMAIN JÁ INSTALADO\033[m";
 else
         curl -LO https://github.com/findomain/findomain/releases/latest/download/findomain-linux-i386.zip;
+        unzip findomain-linux-i386.zip;
         chmod 777 findomain;
         mv findomain /usr/bin/;
         rm findomain-linux-i386.zip;
@@ -170,6 +210,18 @@ else
         mv /root/go/bin/httpx /usr/bin/;
 fi
 
+
+echo -e "\n\n\033[33;1mHTTPROBE - TOMNOMNOM\033[m";
+
+if [ -e /usr/bin/httprobe ];then
+        echo -e "\033[32;1mHTTPROBE JÁ INSTALADO\033[m";
+else
+        go install github.com/tomnomnom/httprobe@latest;
+        mv /root/go/bin/httprobe /usr/bin/;
+fi
+
+
+
 echo -e "\n\n\033[33;1mGET ALL URLS - CORBEN LEO\033[m";
 
 if [ -e /usr/bin/gau ];then
@@ -192,15 +244,34 @@ echo -e "\n\n\033[33;1mAUTOMAÇÃO - BURP SUITE - PORTSWIGGER\033[m";
 
 mkdir "tool_burp_suite";
 cd tool_burp_suite/;
-if [ -e /usr/bin/burp ];then
-        echo "burp" > executar.sh;
-        chmod 777 executar.sh;
+
+if [ -e /usr/bin/burpsuite ];then
+        echo -e "\033[32;1mBURPSUITE JÁ INSTALADO...\033[m"
+else
+        echo -e "\n\n\033[32;1m Instalando BURPSUITE - Selecione 1 para [Kali Linux/Parrot/Debian] Selecione 2 para [Arch Linux]\033[m";
+
+       read -p "Selecione: [1/2]" resposta;
+         case $resposta in
+                "1")
+                        apt install burpsuite;;
+                "2")
+                        pacman -Sy burpsuite;;
+                *)
+                        echo -e "\033[31;1mOpção Inválida!!\033[m";
+                        exit;;
+                esac
+
 fi
+
 if [ -e /usr/bin/burpsuite ];then
         echo "burpsuite" > executar.sh;
         chmod 777 executar.sh;
 fi
 cd ../;
+
+echo -e "\n\n\033[33;1mARACHNI SCAN\033[m";
+wget "https://github.com/Arachni/arachni/releases/download/v1.6.1.3/arachni-1.6.1.3-0.6.1.1-linux-x86_64.tar.gz";
+tar -xvf arachni-1.6.1.3-0.6.1.1-linux-x86_64.tar.gz;
 
 echo -e "\n\n\033[33;1mTOOL - LOGMEPWN - 0xInfection\033[m";
 
