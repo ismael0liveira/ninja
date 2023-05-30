@@ -21,19 +21,12 @@ echo -e "\033[1;34;40m"$data"\033[m \033[05;33m<SCAN OPEN REDIRECT />>\033[m\n";
 
 scan=$pasta"/scanner/"$1"/resultados/paramslimpos.txt";
 
-mv $scan "/home/ninja/apps/Oralyzer/";
+cp $scan "tool_ORALYZER/";
 
-cd "/home/ninja/apps/Oralyzer/";
+cd "tool_ORALYZER/";
 
 python3 oralyzer.py -l paramslimpos.txt >> $pasta"/scanner/"$1"/resultados/resultados_OPEN_REDIRECT.txt";
 
 rm paramslimpos.txt;
 
-cd "/home/ninja/bugbounty/tools/";
-
-
-
-
-
-
-
+cd ../;
