@@ -153,6 +153,50 @@ else
 fi
 
 
+echo -e "\n\n\033[33;1mDAVTEST - CLDRN\033[m";
+
+if [ -e /usr/bin/curl ];then
+        echo -e "\033[32;1mCURL JÁ INSTALADO...\033[m";
+else
+        echo -e "\n\n\033[32;1m Instalando DAVTEST - Selecione 1 para [Kali Linux/Parrot/Debian] Selecione 2 para [Arch Linux]\033[m";
+
+        read -p "Selecione: [1/2]" resposta;
+        case $resposta in
+                "1")
+                        apt install davtest -y;;
+                "2")
+                        pacman -Sy davtest -y;;
+                *)
+                        echo -e "\033[31;1mOpção Inválida!!\033[m";
+                        exit;;
+                esac
+
+fi
+
+
+
+echo -e "\n\n\033[33;1mSQLMAP - SQLInjection\033[m";
+
+if [ -e /usr/bin/sqlmap ];then
+        echo -e "\033[32;1mSQLMAP JÁ INSTALADO...\033[m";
+else
+        echo -e "\n\n\033[32;1m Instalando SQLMAP - Selecione 1 para [Kali Linux/Parrot/Debian] Selecione 2 para [Arch Linux]\033[m";
+
+        read -p "Selecione: [1/2]" resposta;
+        case $resposta in
+                "1")
+                        apt install sqlmap -y;;
+                "2")
+                        pacman -Sy sqlmap -y;;
+                *)
+                        echo -e "\033[31;1mOpção Inválida!!\033[m";
+                        exit;;
+                esac
+
+fi
+
+
+
 echo -e "\n\n\033[33;1mNGROK \033[m";
 
 if [ -e /usr/bin/ngrok ];then
@@ -240,6 +284,27 @@ else
         mv /root/go/bin/hakrawler /usr/bin/
 fi
 
+echo -e "\n\n\033[33;1mCorsMe - Shivangx01b\033[m";
+
+if [ -e /usr/bin/CorsMe ];then
+        echo -e "\033[32;1mCorsMe JÁ INSTALADO\033[m";
+else
+        go install github.com/shivangx01b/CorsMe@latest;
+        mv /root/go/bin/CorsMe /usr/bin/
+fi
+
+echo -e "\n\n\033[33;1mCRLFUZZ - dwisiswant0\033[m";
+
+if [ -e /usr/bin/crlfuzz ];then
+        echo -e "\033[32;1mCRLFUZZ JÁ INSTALADO\033[m";
+else
+        GO111MODULE=on go install github.com/dwisiswant0/crlfuzz/cmd/crlfuzz@latest;
+        mv /root/go/bin/crlfuzz /usr/bin/
+fi
+
+
+
+
 echo -e "\n\n\033[33;1mAUTOMAÇÃO - BURP SUITE - PORTSWIGGER\033[m";
 
 mkdir "tool_burp_suite";
@@ -272,6 +337,7 @@ cd ../;
 echo -e "\n\n\033[33;1mARACHNI SCAN\033[m";
 wget "https://github.com/Arachni/arachni/releases/download/v1.6.1.3/arachni-1.6.1.3-0.6.1.1-linux-x86_64.tar.gz";
 tar -xvf arachni-1.6.1.3-0.6.1.1-linux-x86_64.tar.gz;
+rm arachni-1.6.1.3-0.6.1.1-linux-x86_64.tar.gz;
 
 echo -e "\n\n\033[33;1mTOOL - LOGMEPWN - 0xInfection\033[m";
 
@@ -284,6 +350,33 @@ go build .;
 mv lmp ../;
 cd ../;
 rm -rf LogMePwn-2.0/ v2.0.zip;
+cd ../;
+
+
+echo -e "\n\n\033[33;1mTOOL - WAD - CERN-CERT\033[m";
+
+git clone "https://github.com/CERN-CERT/WAD";
+cd WAD/;
+pip3 install wad;
+python3 setup.py install;
+cd ../;
+mv WAD tool_WAD;
+
+echo -e "\n\n\033[33;1mTOOL - CORSY - s0md3v\033[m";
+
+git clone "https://github.com/s0md3v/Corsy";
+mv Corsy tool_CORSY;
+cd tool_CORSY;
+pip3 install -r requirements.txt;
+cd ../;
+
+echo -e "\n\n\033[33;1mTOOL - CRLFsuite - Nefcore\033[m";
+
+git clone "https://github.com/Nefcore/CRLFsuite";
+mv CRLFsuite tool_CRLF_SUITE;
+cd tool_CRLF_SUITE/;
+pip3 install crlfsuite;
+python3 setup.py install;
 cd ../;
 
 echo -e "\n\n\033[33;1mTOOL - POC-BOMBER - tr0uble-mAker\033[m";
@@ -328,5 +421,13 @@ echo -e "\n\n\033[33;1mTOOL - VULMAP - ZHZYKER\033[m";
 git clone "https://github.com/zhzyker/vulmap.git";
 mv vulmap/ tool_VULMAP;
 cd tool_VULMAP/;
+pip3 install -r requirements.txt;
+cd ../;
+
+echo -e "\n\n\033[33;1mTOOL - ORALYZER - r0075h3ll\033[m";
+
+git clone "https://github.com/r0075h3ll/Oralyzer.git";
+mv Oralyzer tool_ORALYZER/;
+cd tool_ORALYZER/;
 pip3 install -r requirements.txt;
 cd ../;
