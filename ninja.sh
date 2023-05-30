@@ -61,35 +61,9 @@ while [ $um == "1" ];do
 		'2')
 			terminator -e  "./scanner.sh $dominio && bash" &
 			banner;;
-		'3')
-			snipp=$(zenity --forms    \
-            	--title="Formulário"    \
-                --text="Escolha um sub[domínio] de $dominio" \
-                --add-entry="Dominio" \
-                --separator="," \
-                --ok-label="Hackear"
-            );
-
-			if [ -e "/usr/share/sn1per/loot/workspace/"$snipp ];then
-			    zenity --error --text="SCAN NESTE SUB[DOMÍNIO] POR SN1PER JÁ FOI REALIZADO!!";
-    			snip=$(zenity --forms   \
-        		--title="SCAN SN1PER JÁ REALIZADO NESTE SUB[DOMÍNIO]" \
-        		--text="Deseja realizar novamente? [s/n]" \
-        		--add-entry="Resposta" \
-        		--separator="," \
-        		--ok-label="HACKEAR"
-    			)
-				case $snip in
-					's')
-						terminator -e  "sniper -t $snipp -m web && bash" &
-						banner;;
-					'n')
-						banner;;
-				esac
-			else
-				terminator -e  "sniper -t $dominio -m web" &
-				banner;
-			fi;;
+	        '3')
+            		terminator -e "./scan_manual_lista.sh && bash" &
+            		banner;;
 		'4')
 			terminator -e  "./scan_GOWITNESS.sh $dominio" &
 			banner;;
