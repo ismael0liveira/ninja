@@ -22,10 +22,11 @@ https://github.com/CERN-CERT/WAD
 comment
 
 
-for url in $(cat $1"/resultados/subsResolvidos.txt");do
-	echo -e "\033[32;1m\n\nURL: "$url"\033[m\n" >> $pasta"/scanner"$1"/resultados/scan_technologys.txt";
-	python3 /home/ninja/WAD/wad/tool_wad.py -u $url >> $pasta"/scanner/"$1"/resultados/scan_technologys.txt";
-done &
+diretorio=$(pwd);    
+for url in $(cat $1"/resultados/subsResolvidos.txt");do     
+    echo -e "\033[32;1m\n\nURL: "$url"\033[m\n" >> $pasta"/scanner"$1"/resultados/scan_technologys.txt";     
+    python3 $diretorio"/"tool_WAD/wad/__main__.py -u $url >> $pasta"/scanner/"$1"/resultados/scan_technologys.txt";       
+done & 
 
 
 
