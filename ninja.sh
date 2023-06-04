@@ -6,7 +6,7 @@ function banner {
     echo -e "\033[06;31;1m";
     cat banners/bannerCinco.txt;
     echo -e "\033[00;10m";
-	python3 banner.py;
+	python3 banners/banner.py;
     sleep 1;
     echo -e "\033[33;1mBy: Ismael Oliveira\033[m";
     echo -e "\033[31;1mAlvo: "$dominio" \033[m";
