@@ -10,8 +10,9 @@ if [ $user != "root" ];then
 fi
 
 chmod 777 scanner/;
+cd tools_scan/;
 chmod +x *.sh;
-
+cd ../;
 if [ -e /usr/bin/zenity ];then
         echo -e "\033[32;1mZENITY JÁ INSTALADO\033[m";
 else
