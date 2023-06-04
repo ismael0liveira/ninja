@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat banner_install.txt;
+cat banners/banner_install.txt;
 echo -e "\n\033[32;1mBy: Ismael Oliveira\033[m";
 
 user=$(whoami);
