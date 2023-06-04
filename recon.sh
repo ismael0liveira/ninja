@@ -7,7 +7,7 @@ if [ -e $caminho"/scanner/"$1"/resultados/subs.txt" ];then
 	exit;
 else
 
-	cat bannerdois.txt;
+	cat banners/bannerdois.txt;
 
 	pasta=$(pwd);
 	sleep 1;
