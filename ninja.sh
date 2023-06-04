@@ -11,7 +11,7 @@ function banner {
     echo -e "\033[33;1mBy: Ismael Oliveira\033[m";
     echo -e "\033[31;1mAlvo: "$dominio" \033[m";
     sleep 1;
-	cat banner_lista.txt;
+	cat banners/banner_lista.txt;
 }
 
 banner;
