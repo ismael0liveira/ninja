@@ -19,7 +19,7 @@ else
 	for url in $(cat $pasta"/scanner/"$1"/resultados/"paramslimpos.txt);do
 		arquivo=$(echo $url | sed 's/http.*.\/\///');
 
-		for p in $(cat rfiPayloads.txt);do
+		for p in $(cat tools_scan/rfiPayloads.txt);do
         	echo 'curl --silent "'$url$p'" -v 2>&1 | grep "mailto:pudim@pudim.com.br" && echo -e '$url'"\033[33;1m VULNERÁVEL A RFI\033[m" >> rfiResultado.txt &'>> $pasta"/scanner/"$1"/resultados/curlsrfiMontados";
 		done
 	done
