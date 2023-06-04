@@ -24,3 +24,5 @@ chmod +x install.sh<br>
 PARA EXECUTAR:
 
 ./ninja.sh
+
+Ainda está em processo de modificação esta ferramenta e repositório do Github, logo irei deixar uma lista de todos os outros repositórios do Github de outras ferramentas utilizadas internamente pela Ninja.
