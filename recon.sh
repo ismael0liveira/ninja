@@ -324,7 +324,7 @@ else
 
             if [ -e $pasta"/scanner/"$dominio"/resultados/"TodosParamsPreenchidos.txt ];then
 
-            	for param in $(cat listaReconParams.txt);do
+            	for param in $(cat tools_scan/listaReconParams.txt);do
                 	cat $pasta"/scanner/"$dominio"/resultados/"TodosParamsPreenchidos.txt| grep $param >> $pasta"/scanner/"$dominio"/resultados/"AnaliseParams.txt;
                 done
             else
