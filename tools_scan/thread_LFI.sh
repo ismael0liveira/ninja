@@ -18,7 +18,7 @@ else
 	for url in $(cat $pasta"/scanner/"$1"/resultados/"paramslimpos.txt);do
 		arquivo=$(echo $url | sed 's/http.*.\/\///');
 
-		for p in $(cat lfiPayloads.txt);do
+		for p in $(cat tools_scan/lfiPayloads.txt);do
         	echo 'curl --silent "'$url$p'" -v 2>&1 | grep "root:x:0:0:root:" && echo -e '$url'"\033[33;1m VULNERÁVEL A LFI\033[m" >> lfiResultado.txt &'>> $pasta"/scanner/"$1"/resultados/curlslfiMontados";
 		done
 	done
