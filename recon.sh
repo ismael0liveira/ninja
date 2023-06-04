@@ -485,7 +485,7 @@ else
 	data=$(date +"%H:%M:%S");
     echo -e "\033[1;34;40m"$data"\033[m Arquivo a ser gerado: analiseURLS.txt";
 	sleep 2
-	for analiseUrls in $(cat listaReconURLS.txt);do
+	for analiseUrls in $(cat tools_scan/listaReconURLS.txt);do
 		cat $caminho"/scanner/"$1"/resultados/"gauAndHakraw.txt| grep $analiseUrls >> $caminho"/scanner/"$1"/resultados/"analiseURLS.txt;
 	done
 fi
