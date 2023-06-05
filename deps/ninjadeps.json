@@ -5,7 +5,7 @@
         "curl", "davtest", "sqlmap", "burpsuite"],
         "fedora": [ "zenity.x86_64", "terminator.noarch", "sublist3r",
          "golang.x86_64", "zaproxy", "curl", "davtest", "sqlmap", 
-        "burpsuite"],
+        "burpsuite", "python3-pip"],
         "arch": ["zenity", "terminator", "sublist3r", 
         "golang", "python3-pip", "zaproxy", "curl", 
         "davtest", "sqlmap", "burpsuite"]   
@@ -23,7 +23,8 @@
             "https://github.com/m4ll0k/takeover.git",
             "https://github.com/epinna/tplmap",
             "https://github.com/zhzyker/vulmap.git",
-            "https://github.com/r0075h3ll/Oralyzer.git"
+            "https://github.com/r0075h3ll/Oralyzer.git",
+            "https://github.com/aboul3la/Sublist3r.git"
         ]
     }
 }
