@@ -1,5 +1,5 @@
 import os, re, random
-motdBanners = "motd/"
+motdBanners = "banners/motd/"
 
 def insertMotd(motd):
     motds = []
