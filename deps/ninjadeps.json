@@ -26,5 +26,8 @@
             "https://github.com/r0075h3ll/Oralyzer.git",
             "https://github.com/aboul3la/Sublist3r.git"
         ]
-    }
+    },
+    "pip": [
+        "pyfiglet", "wad", "crlfsuite"
+    ]
 }
