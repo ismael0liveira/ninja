@@ -1,8 +1,9 @@
-import json, re, subprocess, os, pip, requests
+import json, re, subprocess, os, pip, requests, tarfile, zipfile
 from urllib.parse import urlparse
 
 deps = "deps/ninjadeps.json"
 osRls = "/etc/os-release"
+baseTools="shuriken"
 
 with open(deps, "r") as tools:
     depsTools = json.loads(tools.read())
@@ -41,6 +42,9 @@ if soID == "fedora":
     for pips in pipPacks:
         pip.main(['install', pips])
     
+    os.mkdir(baseTools)
+    os.chdir(baseTools)
+    
     gitPacks = depsTools["tools"]["git"]
 
     for git in gitPacks:
@@ -59,5 +63,12 @@ if soID == "fedora":
         with open(gitpack, "wb") as file:
             if file.write(download.content):
                 print(f"Compact pack save in: {gitpack}")
-
-        
+                ext = gitpack.split(".")[-1]
+                if ext == "gz" or ext == "bz" or ext == "lzma":
+                    compact = tarfile.open(gitpack, "r")
+                    compact.extractall()
+                    os.remove(gitpack)
+                if ext == "zip":
+                    compact = zipfile.ZipFile(gitpack)
+                    compact.extractall()
+                    os.remove(gitpack)
