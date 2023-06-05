@@ -20,6 +20,7 @@ git clone https://github.com/ismael0liveira/ninja && cd ninja
 sudo su && chmod +x install.sh
 sudo ./install.sh
 ```
+necessário ter python3.6 ou superior
 
 ## PARA EXECUTAR:
 
