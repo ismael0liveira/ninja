@@ -10,6 +10,7 @@ if [ $user != "root" ];then
 fi
 
 chmod 777 scanner/;
+chmod 777 ninja.sh;
 cd tools_scan/;
 chmod +x *.sh;
 cd ../;
