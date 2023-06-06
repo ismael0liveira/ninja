@@ -27,6 +27,12 @@
         "gitzip": [
             "https://github.com/Arachni/arachni/releases/download/v1.6.1.3/arachni-1.6.1.3-0.6.1.1-linux-x86_64.tar.gz",
             "https://github.com/0xInfection/LogMePwn/archive/refs/tags/v2.0.zip"
+        ],
+        "gitrepo": [
+            "https://github.com/rpmsphere/noarch/tree/master/r"
+        ],
+        "gitperm": [
+            "https://github.com/rpmsphere/noarch/tree/f0c525846b3696c63ea5c5d847f6c1c14c6b0519/r"
         ]
     },
     "pip": [
