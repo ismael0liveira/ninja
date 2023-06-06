@@ -11,6 +11,7 @@ fi
 
 chmod 777 scanner/;
 chmod 777 ninja.sh;
+chmod 777 recon.sh;
 cd tools_scan/;
 chmod +x *.sh;
 cd ../;
