@@ -13,17 +13,20 @@ Inicialmente esta automação era para uso pessoal, recentemente foi disponibili
 Ninja é uma automação semelhante a SN1PER, um conjunto de ferramentas e técnicas automatizadas, Link de referência: https://github.com/1N3/Sn1per
 
 
-PARA INSTALAR:
+## PARA INSTALAR:
+```sh
 
-git clone https://github.com/ismael0liveira/ninja<br>
-cd ninja<br>
-sudo su<br>
-chmod +x install.sh<br>
-./install.sh
+git clone https://github.com/ismael0liveira/ninja && cd ninja 
+sudo su && chmod +x install.sh
+sudo ./install.sh
+```
+necessário ter python3.6 ou superior
 
-PARA EXECUTAR:
+## PARA EXECUTAR:
 
+```sh
 ./ninja.sh
+```
 
 Ainda está em processo de modificação esta ferramenta e repositório do Github, logo irei deixar uma lista de todos os outros repositórios do Github de outras ferramentas utilizadas internamente pela Ninja.
 
