@@ -31,4 +31,5 @@ necessário ter python3.6 ou superior
 Ainda está em processo de modificação esta ferramenta e repositório do Github, logo irei deixar uma lista de todos os outros repositórios do Github de outras ferramentas utilizadas internamente pela Ninja.
 
 ## OBSERVAÇÃO IMPORTANTE: 
-O autor dessa ferramenta não se responsabiliza pelo mau uso de outros com a mesma. O objetivo é contribuir com a comunidade de Segurança da Informação, profissionais de Hacking Ético como por exemplo Pentesters e Bug Hunters.
+O autor dessa ferramenta não se responsabiliza pelo mau uso de outros com a mesma. 
+## O objetivo é contribuir com a comunidade de Segurança da Informação, profissionais de Hacking Ético como por exemplo Pentesters e Bug Hunters.
