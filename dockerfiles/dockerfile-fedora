@@ -1,0 +1,10 @@
+FROM fedora:38
+
+RUN dnf update -y && \
+dnf upgrade -y && \
+dnf install -y git \
+python3.6 && \
+cd /root/ && \
+git clone https://github.com/xslackx/ninja.git && \
+cd ninja && \
+python3.6 install.py
