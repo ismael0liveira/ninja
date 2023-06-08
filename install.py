@@ -1,4 +1,4 @@
-import json, re, subprocess, os, pip, requests, tarfile, zipfile
+import json, re, subprocess, os, pip, requests, tarfile, zipfile, shutil
 from urllib.parse import urlparse
 
 deps = "deps/ninjadeps.json"
@@ -23,12 +23,8 @@ soID = grep[1]
 if soID == "fedora":
     packages = depsTools["os"][soID]
     print("This may take a while, go get the coffe!\n")
-    for pack in packages:
-        if pack != depsTools["os"][soID][2] and \
-            pack != depsTools["os"][soID][4] and  \
-                pack != depsTools["os"][soID][6] and  \
-                    pack != depsTools["os"][soID][7] and \
-                        pack != depsTools["os"][soID][8]:
+    for pack in packages:   
+        if pack:
             cmdlet=f"dnf install -y {pack}"
             print(f"Need package: {pack}\n")
             with subprocess.Popen(cmdlet, stdout=subprocess.PIPE, shell=True) as cmd:
@@ -38,6 +34,7 @@ if soID == "fedora":
             
             if cmdres:
                 print(f"Package installed: {pack}\n")
+                
     pipPacks = depsTools["pip"]
     for pips in pipPacks:
         pip.main(['install', pips])
@@ -72,3 +69,5 @@ if soID == "fedora":
                     compact = zipfile.ZipFile(gitpack)
                     compact.extractall()
                     os.remove(gitpack)
+
+    print("Install RPM Repositories!\n")
