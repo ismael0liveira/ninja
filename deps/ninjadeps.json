@@ -4,7 +4,7 @@
         "golang", "python3-pip", "zaproxy", 
         "curl", "davtest", "sqlmap", "burpsuite"],
         "fedora": [ "zenity.x86_64", "terminator.noarch",
-         "golang.x86_64", "", "curl", "python3-pip"],
+         "golang.x86_64", "curl", "python3-pip"],
         "arch": ["zenity", "terminator", "sublist3r", 
         "golang", "python3-pip", "zaproxy", "curl", 
         "davtest", "sqlmap", "burpsuite"]   
