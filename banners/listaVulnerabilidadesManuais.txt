@@ -1,0 +1,38 @@
+Esta lista de arquivos abaixo é válida para encontrar problemas de segurança como IDOR, No Rate Limit,  Broken Access Control.
+
+Para conseguir tirar melhor proveitos destes arquivos é importante ter conhecimento de Protocolo HTTP.
+
+Segue uma referência:
+
+https://www.rfc-editor.org/rfc/rfc2616
+
+Analiseparams.txt
+analiseURLS.txt
+gauAndHakraw.txt
+gauHakrawParamsDuzentosRedirectProibidosServerLIMPO.txt
+gauHakrawParamsDuzentosRedirectProibidosServer.txt
+gauHakrawParamsDuzentos.txt
+gauHakrawParamsRedirects.txt
+TodosParamsPreenchidos.txt
+gau.txt
+hakraw.txt
+
+
+
+
+cmsDetected.txt
+
+
+Este arquivo lhe mostra URLS com palavras chaves de CMS, isto indica que aquele subdomínio ou domínio utiliza Tal CMS, assim facilitando para realizar um Scan específico para ele.
+
+
+
+statusHTTP.txt
+
+A depender da resposta HTTP pode ser que vaze algum tipo de informação sensível ou podendo ser um potencial para determinada vulnerabilidade, como por exemplo uma resposta de redirecionamento 3** que pode ajudar identificar um Subdomain Takeover.
+
+
+subsAnaliseEndpoint.txt
+
+Este arquivo mostra o resultado obtido de crt.sh por logs SSL/TLS, se tiver um * atrás é um grande indício de ter mais subdomínios atrás deste.
+
