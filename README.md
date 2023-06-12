@@ -49,37 +49,35 @@ NGROK
 https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
 
 GOWITNESS
-github.com/sensepost/gowitness
+https://github.com/sensepost/gowitness
                 
 FINDOMAIN
 
 https://github.com/findomain/findomain/releases/latest/download/findomain-linux-i386.zip
 
 SUBFINDER
-github.com/projectdiscovery/subfinder/v2/cmd/subfinder
+https://github.com/projectdiscovery/subfinder/v2/cmd/subfinder
 
 ASSETFINDER
-github.com/tomnomnom/assetfinder
-
-
+https://github.com/tomnomnom/assetfinder
 
 HTTPX
-github.com/projectdiscovery/httpx/cmd/httpx
+https://github.com/projectdiscovery/httpx/cmd/httpx
         
 HTTPROBE
-github.com/tomnomnom/httprobe
+https://github.com/tomnomnom/httprobe
 
 GAU
-github.com/lc/gau/v2/cmd/gau
+https://github.com/lc/gau/v2/cmd/gau
         
 HAKRAWLER
-github.com/hakluke/hakrawler
+https://github.com/hakluke/hakrawler
 
 CorsMe
-github.com/shivangx01b/CorsMe
+https://github.com/shivangx01b/CorsMe
 
 CRLFUZZ
-github.com/dwisiswant0/crlfuzz/cmd/crlfuzz
+https://github.com/dwisiswant0/crlfuzz/cmd/crlfuzz
 
 Burp Suite
 https://portswigger.net/burp
