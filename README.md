@@ -25,7 +25,7 @@ PARA EXECUTAR:
 
 ./ninja.sh
 
-Ainda está em processo de modificação esta ferramenta e repositório do Github, logo irei deixar uma lista de todos os outros repositórios do Github de outras ferramentas utilizadas internamente pela Ninja.
+Ainda está em processo de modificação esta ferramenta e repositório do Github, logo irei completar a lista de todos repositórios do Github de outras ferramentas utilizadas internamente pela Ninja.
 
 ZENITY
 https://github.com/GNOME/zenity
@@ -52,7 +52,6 @@ GOWITNESS
 https://github.com/sensepost/gowitness
                 
 FINDOMAIN
-
 https://github.com/findomain/findomain/releases/latest/download/findomain-linux-i386.zip
 
 SUBFINDER
