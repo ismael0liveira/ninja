@@ -425,13 +425,13 @@ else
 
 
     data=$(date +"%H:%M:%S");
-    echo -e "\033[1;34;40m"$data"\033[m \033[32;1mVocê deseja usar AMASS?\033[m";
-    read -p "Confirma [s/n]: " resposta;
+    echo -e "\033[1;34;40m"$data"\033[m \033[32;1mVocê deseja continuar?\033[m";
+    read -p "Confirma [n/s]: " resposta;
 
     case $resposta in
-        's')
+        'n')
 			test;;
-    	'n')
+    	's')
 			recon;;
 
     	*)
