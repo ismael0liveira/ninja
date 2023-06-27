@@ -194,7 +194,7 @@ else
 
 		 
 	    echo -e "\033[32;1mESCOLHA UMA OPÇÃO PARA COLETAR URLS";
-	    read -p "SCAN DE URLS NINJA(1) / GAU(2) // [1/2]: " resposta;
+	    read -p "[EXPERIMENTAL] SCAN DE URLS NINJA(1) / GAU(2) // [1/2]: " resposta;
 
 	    case $resposta in
 	    	"1")
