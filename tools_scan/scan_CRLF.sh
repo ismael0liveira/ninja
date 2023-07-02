@@ -6,12 +6,12 @@ pasta=$(pwd);
 if [ -e $pasta"/scanner/"$1"/resultados/paramslimpos.txt" ];then
     test;
 else
-    zenity --error --text="REALIZE O RECONHECIMENTO PRIMEIRAMENTE!!";
+    terminator -e " echo '\033[33;1mREALIZE O RECONHECIMENTO PRIMEIRAMENTE!!\033[m';bash";
     exit;
 fi
 
 if [ -e $pasta"/scanner/"$1"/resultados/resultados_CRLF.txt" ];then
-    zenity --error --text="SCAN CRLF INJECTION NESTE DOMÍNIO JÁ REALIZADO!!";
+    terminator -e " echo '\033[33;1mSCAN CRLF INJECTION NESTE DOMÍNIO JÁ REALIZADO!!\033[m';bash";
     exit;
 else
     test;
