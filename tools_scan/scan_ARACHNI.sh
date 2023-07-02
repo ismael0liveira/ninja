@@ -1,12 +1,8 @@
 #!/bin/bash
 
-dominio=$(zenity --forms    \
-        --title="Formulário"    \
-        --text="Formulário Hacking" \
-        --add-entry="Dominio" \
-        --separator="," \
-        --ok-label="Hackear"
-);
+
+echo "\033[33;1mDIGITE O DOMÍNIO PARA CONTINUAR!!\033[m";
+read -p "Domínio: " dominio;
 
 cd ../;
 pasta=$(pwd);
