@@ -7,12 +7,6 @@ pasta=$(pwd);
 
 echo -e "\n\033[33;1mPara prosseguir, digite um e-mail\033[m";
 
-dominio=$(zenity --forms    \
-        --title="Formulário"    \
-        --text="Formulário Hacking" \
-        --add-entry="Meu email" \
-        --separator="," \
-        --ok-label="Hackear"
-);
+read -p "Email: " email;
 
 ./tool_LOG_4_SHELL/lmp -email $email -file $pasta"/scanner/"$1"/resultados/subs.txt" -threads 100
