@@ -17,13 +17,9 @@ function banner {
 banner;
 echo -e "\n\033[33;1mPara prosseguir, digite o dominio do Alvo\033[m";
 
-dominio=$(zenity --forms    \
-        --title="Formulário"    \
-        --text="Formulário Hacking" \
-        --add-entry="Dominio" \
-        --separator="," \
-        --ok-label="Hackear"
-);
+echo "\033[33;1mDIGITE O DOMÍNIO PARA PROSSEGUIR!!\033[m";
+read -p "Domínio: " dominio;
+
 pasta=$(pwd);
 
 if [ -e $pasta"/scanner/"$dominio ];then
@@ -71,13 +67,9 @@ while [ $um == "1" ];do
 			terminator -e  "cd tools_scan/;./scan_WPSCAN.sh $dominio" &
 			banner;;
 		'6')
-			zap=$(zenity --forms    \
-        		--title="Formulário"    \
-        		--text="Escolha um sub[domínio] de $dominio" \
-        		--add-entry="Dominio" \
-        		--separator="," \
-        		--ok-label="Hackear"
-			);
+			echo "\033[33;1mDIGITE O DOMÍNIO OU SUBDOMÍNIO DE "$dominio" PARA PROSSEGUIR!!\033[m";
+			read -p "Domínio: " zap;
+
 			terminator -e  "cd tools_scan/;./scan_ZAP.sh $zap" &
 			banner;;
 		'7')
