@@ -3,7 +3,7 @@
 caminho=$(pwd);
 
 if [ -e $caminho"/scanner/"$1"/resultados/subs.txt" ];then
-	zenity --error --text="RECON NESTE DOMÍNIO JÁ REALIZADO!!";
+	terminator -e "echo '\033[31;1mSCAN NESTE DOMÍNIO JÁ FOI REALIZADO!!\033[m';bash";
 	exit;
 else
 
@@ -128,13 +128,8 @@ else
 
 	function recon {
 		cd ../;
-		dominio=$(zenity --forms    \
-        --title="Formulário"    \
-        --text="Formulário Hacking" \
-        --add-entry="Dominio" \
-        --separator="," \
-        --ok-label="Hackear"
-		);
+		echo "\033[33;1mDIGITE O DOMÍNIO PARA PROSSEGUIR!!\033[m";
+		read -p "Domínio: " dominio;
 
 		#_variaveis
 
@@ -199,23 +194,19 @@ else
 	    case $resposta in
 	    	"1")
 
-			dominio=$(zenity --forms    \
-        		--title="Formulário"    \
-        		--text="Formulário Hacking" \
-        		--add-entry="Dominio" \
-        		--separator="," \
-        		--ok-label="Hackear"
-			);
+				echo "\033[33;1mDIGITE O DOMÍNIO PARA PROSSEGUIR!!\033[m";
+				read -p "Domínio: " dominio;
 
-			diretorio=$(pwd);
-			touch $diretorio"/scanner/"$dominio"/resultados/"urls_s.txt;
-			terminator -e "./get_urls.sh "$dominio &
-			terminator -e "tail -f "$diretorio"'/scanner/'"$dominio"'/resultados/urls_s.txt'" &
-			sleep 4;
-			clear;
-			echo -e "\n\n\n\033[32;1mAGUARDE as Threads Finalizarem e cofirme com 's'\033[m\n\n\n";
-			read -p "Confirme [s]: " confirma;
-			case $resposta in
+
+				diretorio=$(pwd);
+				touch $diretorio"/scanner/"$dominio"/resultados/"urls_s.txt;
+				terminator -e "./get_urls.sh "$dominio &
+				terminator -e "tail -f "$diretorio"'/scanner/'"$dominio"'/resultados/urls_s.txt'" &
+				sleep 4;
+				clear;
+				echo -e "\n\n\n\033[32;1mAGUARDE as Threads Finalizarem e cofirme com 's'\033[m\n\n\n";
+				read -p "Confirme [s]: " confirma;
+				case $resposta in
         			's')
                 			test;;
         			*)
@@ -542,11 +533,3 @@ else
 fi
 
 bash;
-
-
-
-
-
-
-
-
