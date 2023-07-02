@@ -33,13 +33,8 @@ fi
 if [ -e $pasta"/scanner/"$dominio"/resultados/plataforma.txt" ];then
         test
 else
-	plataforma=$(zenity --forms    \
-        	--title="Formulário"    \
-        	--text="Formulário Hacking" \
-        	--add-entry="Plataforma" \
-        	--separator="," \
-        	--ok-label="Hackear"
-	);
+	echo -e "\n\n\033[33;1mDIGITE A PLATAFORMA PARA PROSSEGUIR!!\033[m";
+	read -p "Domínio: " plataforma;
 	echo "Este programa "$dominio" faz parte da plataforma: "$plataforma > $pasta"/scanner/"$dominio"/resultados/plataforma.txt";
 
 fi
