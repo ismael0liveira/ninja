@@ -2,15 +2,7 @@
 
 cd ../;
 pasta=$(pwd);
-
-dominio=$(zenity --forms    \
-	--title="Formulário"    \
-    --text="Formulário Hacking" \
-    --add-entry="Dominio" \
-    --separator="," \
-    --ok-label="Hackear"
-    );
-
+read -p "Digite o domínio: " dominio;
 cat hiddens_nao_mesclados.txt $pasta"/scanner/"$dominio"/resultados/paramslimpos.txt" | sort -u > $pasta"/scanner/"$dominio"/resultados/temporario.txt";
 rm $pasta"/scanner/"$dominio"/resultados/paramslimpos.txt";
 mv $pasta"/scanner/"$dominio"/resultados/temporario.txt" $pasta"/scanner/"$dominio"/resultados/paramslimpos.txt";
