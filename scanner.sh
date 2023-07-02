@@ -10,7 +10,7 @@ if [ $user != "root" ];then
 fi;
 
 if [ -e $caminho"/scanner/"$1"/resultados/analiseWordpress.txt" ];then
-	zenity --error --text="SCAN NESTE DOMÍNIO JÁ REALIZADO!!";
+	terminator -e "echo '\033[31;1mSCAN NESTE DOMÍNIO JÁ FOI REALIZADO!!\033[m';bash";
     exit;
 else
 	test;
