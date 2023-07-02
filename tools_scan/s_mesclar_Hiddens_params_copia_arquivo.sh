@@ -1,6 +1,7 @@
 #!/bin/bash
 
-read -p "Digite o domínio: " dominio;
+echo "\033[33;1mDIGITE O DOMÍNIO PARA CONTINUAR!!\033[m";
+read -p "Domínio: " dominio;
 cd ../;
 pasta=$(pwd);
 
