@@ -7,7 +7,7 @@ if [ -e $caminho"/scanner/"$1"/resultados/"$resolv ];then
 
 
 	if [ -e $caminho"/scanner/"$1"/resultados/imagens" ];then
-		zenity --error --text="SCAN NESTE DOMÍNIO JÁ REALIZADO!!";
+		terminator -e " echo '\033[33;1mSCAN NESTE DOMÍNIO JÁ REALIZADO!!\033[m';bash";
 		exit;
 	else
 		#Passar GOWITNESS
@@ -32,5 +32,5 @@ if [ -e $caminho"/scanner/"$1"/resultados/"$resolv ];then
 	fi
 
 else
-    zenity --error --text="REALIZE O RECONHECIMENTO PRIMEIRO!!";
+    terminator -e " echo '\033[33;1mREALIZE O RECONHECIMENTO PRIMEIRO!!\033[m';bash";
 fi
