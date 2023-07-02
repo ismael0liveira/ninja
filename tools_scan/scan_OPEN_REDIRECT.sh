@@ -5,12 +5,12 @@ pasta=$(pwd);
 if [ -e $pasta"/scanner/"$1"/resultados/paramslimpos.txt" ];then
     test;
 else
-    zenity --error --text="REALIZE O RECONHECIMENTO PRIMEIRAMENTE!!";
+    terminator -e "echo '\033[33;1mREALIZE O RECONHECIMENTO PRIMEIRAMENTE!!\033[m';bash";
     exit;
 fi
 
 if [ -e $pasta"/scanner/"$1"/resultados/resultados_OPEN_REDIRECT.txt" ];then
-    zenity --error --text="SCAN OPEN REDIRECT NESTE DOMÍNIO JÁ REALIZADO!!";
+    terminator -e "echo '\033[33;1mSCAN OPEN REDIRECT NESTE DOMÍNIO JÁ REALIZADO!!\033[m';bash";
     exit;
 else
     test;
