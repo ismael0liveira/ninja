@@ -34,7 +34,7 @@ if [ -e $pasta"/scanner/"$dominio"/resultados/plataforma.txt" ];then
         test
 else
 	echo -e "\n\n\033[33;1mDIGITE A PLATAFORMA PARA PROSSEGUIR!!\033[m";
-	read -p "Domínio: " plataforma;
+	read -p "Plataforma: " plataforma;
 	echo "Este programa "$dominio" faz parte da plataforma: "$plataforma > $pasta"/scanner/"$dominio"/resultados/plataforma.txt";
 
 fi
