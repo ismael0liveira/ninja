@@ -17,7 +17,7 @@ function banner {
 banner;
 echo -e "\n\033[33;1mPara prosseguir, digite o dominio do Alvo\033[m";
 
-echo -e "\033[33;1mDIGITE O DOMÍNIO PARA PROSSEGUIR!!\033[m";
+echo -e "\n\n\033[33;1mDIGITE O DOMÍNIO PARA PROSSEGUIR!!\033[m";
 read -p "Domínio: " dominio;
 
 pasta=$(pwd);
