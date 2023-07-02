@@ -6,12 +6,12 @@ pasta=$(pwd);
 if [ -e $pasta"/scanner/"$1"/resultados/subsResolvidos.txt" ];then
     test;
 else
-    zenity --error --text="REALIZE O RECONHECIMENTO PRIMEIRAMENTE!!";
+    terminator -e "echo '\033[33;1mREALIZE O RECONHECIMENTO PRIMEIRAMENTE!!\033['";
     exit;
 fi
 
 if [ -e $pasta"/scanner/"$1"/resultados/resultados_CORS.txt" ];then
-    zenity --error --text="SCAN CORS MISCONFIGURATION NESTE DOMÍNIO JÁ REALIZADO!!";
+    terminator -e "echo '\033[33;1mSCAN CORS MISCONFIGURATION NESTE DOMÍNIO JÁ REALIZADO!!\033[m';bash";
     exit;
 else
     test;
