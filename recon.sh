@@ -71,7 +71,7 @@ else
 
         sleep 2;
 
-        subfinder -d $1 -o subfinder.txt;
+        subfinder -d $1 -all -o subfinder.txt;
 
         subfinder="subfinder.txt";
 
